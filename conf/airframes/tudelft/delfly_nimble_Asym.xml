@@ -65,7 +65,7 @@
       <define name="FILTER_CMD_PITCH_CUTOFF" value="15.0"/>
       <define name="FILTER_CMD_YAW_CUTOFF" value="10.0"/>
       <define name="STABILIZATION_ATTITUDE_SP_PSI_DELTA_LIMIT" value="0.5"/>
-      <define name="USE_FLIP_MODE" value="0"/>
+      <define name="USE_FLIP_MODE" value="1"/>
     </module>
     <module name="ahrs" type="int_cmpl_quat">
       <define name="AHRS_PROPAGATE_LOW_PASS_RATES" value="FALSE"/>
@@ -100,7 +100,7 @@
   <servos driver="Pwm">
     <servo name="MOTOR_LEFT" no="1" min="1100" neutral="1100" max="1900"/> 
       <servo name="MOTOR_RIGHT" no="0" min="1100" neutral="1100" max="1900"/>
-      <servo name="DIHEDRAL" no="3" min="1400" neutral="1650" max="1900"/>
+      <servo name="DIHEDRAL" no="3" min="1350" neutral="1600" max="1850"/>
     <servo name="WING_DEF" no="2" min="1150" neutral="1750" max="2350"/>
    <servo name="WING_TILT" no="4" min="1100" neutral="1100" max="1900"/>
   </servos>
@@ -158,17 +158,17 @@
   </section>
   
   <section name="AUTOPILOT">
-    <define name="MODE_STARTUP" value="AP_MODE_RC_DIRECT"/>
-       <define name="MODE_MANUAL" value="AP_MODE_RC_DIRECT"/>
-    <define name="MODE_AUTO1" value="AP_MODE_ATTITUDE_DIRECT"/>
-    <!--define name="MODE_AUTO2" value="AP_MODE_ATTITUDE_DIRECT"/-->
-    <define name="MODE_AUTO2" value="AP_MODE_NAV"/>
 
-   <!--section name="AUTOPILOT">
-    <define name="MODE_STARTUP" value="AP_MODE_RC_DIRECT"/>
-       <define name="MODE_MANUAL" value="AP_MODE_ATTITUDE_DIRECT"/>
-    <define name="MODE_AUTO1" value="AP_MODE_NAV"/>
+    <!--define name="MODE_STARTUP" value="AP_MODE_RC_DIRECT"/>
+    <define name="MODE_MANUAL" value="AP_MODE_RC_DIRECT"/>
+    <define name="MODE_AUTO1" value="AP_MODE_ATTITUDE_DIRECT"/>
     <define name="MODE_AUTO2" value="AP_MODE_FLIP"/-->
+
+  
+    <define name="MODE_STARTUP" value="AP_MODE_RC_DIRECT"/>
+    <define name="MODE_MANUAL" value="AP_MODE_ATTITUDE_DIRECT"/>
+    <define name="MODE_AUTO1" value="AP_MODE_NAV"/>
+    <define name="MODE_AUTO2" value="AP_MODE_FLIP"/>
         
     <define name="USE_THROTTLE_FOR_MOTOR_ARMING" value="TRUE"/>
 <!--    <define name="USE_KILL_SWITCH_FOR_MOTOR_ARMING" value="TRUE"/-->

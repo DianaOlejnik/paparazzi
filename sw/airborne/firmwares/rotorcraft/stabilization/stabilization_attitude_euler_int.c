@@ -305,10 +305,10 @@ void stabilization_attitude_run(bool  in_flight)
     autopilot_set_mode(AP_MODE_FLIP);
     switch_prev_state = 1;
   }
-  else if (autopilot_get_mode() == AP_MODE_ATTITUDE_DIRECT) {
+  else if (autopilot_get_mode() == AP_MODE_NAV) {
     // reset AUTO2 to ATT if the flip is finished or if it was incomplete
-    autopilot_mode_auto2 = AP_MODE_ATTITUDE_DIRECT;
-    autopilot_set_mode(AP_MODE_ATTITUDE_DIRECT);
+    autopilot_mode_auto2 = AP_MODE_NAV;
+    autopilot_set_mode(AP_MODE_NAV);
 
     in_flip=0;
     auto_pitch=0;

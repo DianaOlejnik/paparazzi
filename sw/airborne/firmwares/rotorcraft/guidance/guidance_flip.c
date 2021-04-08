@@ -160,7 +160,7 @@
 #define FIRST_THRUST_DURATION 0.0
 #define STRAIGHT_FLIGHT_DURATION 0.0
 #define THROTTLE_FACTOR 1.0 // 1.0 for hover, increase for increasing altitude
-#define PULSE_DURATION 1.5
+#define PULSE_DURATION 10
 #define FINAL_THRUST_LEVEL 6500
 #define FINAL_THRUST_DURATION 0
 #define ROLL_CMD_NOMINAL 0 //-MAX_PPRZ*30/60 // angle of 30 degrees
@@ -922,7 +922,11 @@ void guidance_flip_run(void)
         case 71:
           // straight flight
           auto_roll = ROLL_CMD_NOMINAL; //-MAX_PPRZ*2/3;
-          stabilization_attitude_run(autopilot_in_flight());
+
+          // Diana
+          // making mode go to ATT before FLIP
+          // stabilization_attitude_run(autopilot_in_flight());
+
           //      stabilization_cmd[COMMAND_THRUST]=radio_control.values[RADIO_THROTTLE];
                 stabilization_cmd[COMMAND_THRUST]=THROTTLE_FACTOR*hover_throttle;
 
@@ -1246,6 +1250,7 @@ void guidance_flip_run(void)
 //      autopilot_mode_auto2 = autopilot_mode_old;
 //      autopilot_set_mode(autopilot_mode_old);
 
+// come back to ATT after FLIP
       autopilot_mode_auto2 = AP_MODE_ATTITUDE_DIRECT;
       autopilot_set_mode(AP_MODE_ATTITUDE_DIRECT);
 
