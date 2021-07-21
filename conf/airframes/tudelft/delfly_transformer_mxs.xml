@@ -102,8 +102,8 @@
 <!-- Diana -->
     <servo name="MOTOR_LEFT" no="1" min="1100" neutral="1100" max="1900"/> 
     <servo name="MOTOR_RIGHT" no="0" min="1100" neutral="1100" max="1900"/>
-    <servo name="DIHEDRAL" no="3" min="1375" neutral="1550" max="1850"/>
-    <servo name="WING_DEF" no="2" min="1000" neutral="1500" max="2000"/>
+    <servo name="DIHEDRAL" no="3" min="1450" neutral="1700" max="1950"/>
+    <servo name="WING_DEF" no="2" min="900" neutral="1500" max="2100"/>
 
 <!--Christophe
     <servo name="MOTOR_LEFT" no="1" min="1100" neutral="1100" max="1900"/> 
